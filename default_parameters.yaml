@@ -1,0 +1,64 @@
+whisper:
+    model_size: "large-v2"
+    lang: "Automatic Detection"
+    is_translate: false
+    beam_size: 5
+    log_prob_threshold: -1
+    no_speech_threshold: 0.6
+    best_of: 5
+    patience: 1
+    condition_on_previous_text: true
+    prompt_reset_on_temperature: 0.5
+    initial_prompt: null
+    temperature: 0
+    compression_ratio_threshold: 2.4
+    chunk_length: 30
+    batch_size: 24
+    length_penalty: 1
+    repetition_penalty: 1
+    no_repeat_ngram_size: 0
+    prefix: null
+    suppress_blank: true
+    suppress_tokens: "[-1]"
+    max_initial_timestamp: 1
+    word_timestamps: false
+    prepend_punctuations: "\"'“¿([{-"
+    append_punctuations: "\"'.。,，!！?？:：”)]}、"
+    max_new_tokens: null
+    hallucination_silence_threshold: null
+    hotwords: "勇, 渥馬爾, 愛麗絲, 特爾安娜絲, 齊爾, 閃電俠, 瑪迦, 古木, 瀾, 達爾西, 葉娜, 安格列, 布萊特, 伊格, 洛里昂, 令月, 緹莉, 芽芽, 青硯, 霧己, 夜姬, 星葵, 蘇離, 亞連, 索文, 颯枷, 拉維爾, 若伊, 阿塔, 潘因, 綺蘿, 狄拉克, 卡瑞茲, 希露卡, 蘭鐸, 依夏, 皮皮, 銀晝, 筱清, 埃羅, 亥犽, 卡芬妮, 緋淚, 弗洛倫, 奎倫, 瑞克, 蘇, 艾蜜莉, 維羅, 安奈特, 諾可西, 伯頓, 洛克, 艾瑞, 靈靈, 莉莉安, 圖倫, 琳蒂, 提米, 夜叉, 麥克思, 神力女超人, 摩恩, 龍馬, 艾翠絲, 贊尼爾, 阿杜恩, 凱格路士, 超人, 伊耿士, 小丑, 祖卡, 莫拉, 拉茲, 司科德, 史蘭茲, 蝙蝠俠, 愛里, 科里納卡, 莫托斯, 海倫, 金納, 娜塔亞, 朗博, 菲尼克, 夸克, 普雷塔, 克萊斯, 查戈納爾, 穆加爵, 馬洛斯, 塔拉, 克里希, 哥德爾, 卡莉, 趙雲, 凡恩, 薩尼, 盧蜜亞, 蘿兒, 納克羅斯, 貂蟬, 阿萊斯特, 悟空, 牛魔王, 瑟斐斯, 薇菈, 堇, 歐米茄, 刀鋒寶貝, 美娜, 阿茲卡, 呂布, 傳說對決, 傳說, 阿比, 教練, 比哥, 莊敬"
+    language_detection_threshold: null
+    language_detection_segments: 1
+    add_timestamp: true
+  
+  vad:
+    vad_filter: false
+    threshold: 0.5
+    min_speech_duration_ms: 250
+    max_speech_duration_s: 9999
+    min_silence_duration_ms: 1000
+    speech_pad_ms: 2000
+  
+  diarization:
+    is_diarize: false
+    hf_token: ""
+  
+  bgm_separation:
+    is_separate_bgm: false
+    model_size: "UVR-MDX-NET-Inst_HQ_4"
+    segment_size: 256
+    save_file: false
+    enable_offload: true
+  
+  translation:
+    deepl:
+      api_key: ""
+      is_pro: false
+      source_lang: "Automatic Detection"
+      target_lang: "English"
+    nllb:
+      model_size: "facebook/nllb-200-1.3B"
+      source_lang: null
+      target_lang: null
+      max_length: 200
+    add_timestamp: true
